@@ -23,7 +23,7 @@ declare namespace TypeParams {
         searchParams?: never;
     };
     /**
-     *
+     *  Supported Http endpoint types
      */
     type EndpointTypes = {
         GET?: never;
