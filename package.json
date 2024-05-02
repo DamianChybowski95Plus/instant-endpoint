@@ -1,6 +1,6 @@
 {
     "name": "instant-endpoint",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "private": true,
     "scripts": {
         "dev": "next dev",
@@ -9,7 +9,7 @@
         "lint": "next lint",
         "publish-build": "tsup src/index.ts --format cjs,esm --dts",
         "publish-dev": "npm run publish-build -- --watch",
-        "publish-packages": "turbo run publish-build && changeset version && changeset publish"
+        "publish-package": "turbo run publish-build && changeset version && changeset publish"
     },
     "dependencies": {
         "@changesets/cli": "^2.27.1",
@@ -27,9 +27,6 @@
         "eslint": "^8",
         "eslint-config-next": "14.2.3",
         "typescript": "^5"
-    },
-    "publishConfig": {
-        "access": "public"
     },
     "packageManager": "npm@10.2.0",
     "main": "./dist/index.js",

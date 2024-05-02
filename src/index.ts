@@ -50,7 +50,7 @@ declare namespace Argument {
 
 declare namespace Object {
     /**
-     *
+     *  Schemas are meant to be provided as values of object
      */
     type SupportedOptionsSchema = { [key: string]: z.Schema };
     /**
