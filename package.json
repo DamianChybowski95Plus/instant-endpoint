@@ -1,14 +1,14 @@
 {
     "name": "instant-endpoint",
-    "version": "0.1.1",
+    "version": "0.1.15",
     "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint",
-        "publish-build": "tsup src/index.ts --format cjs,esm --dts",
-        "publish-dev": "npm run publish-build -- --watch",
-        "publish-package": "turbo run publish-build && changeset version && changeset publish"
+        "devEnv-dev": "next dev",
+        "devEnv-build": "next build",
+        "devEnv-start": "next start",
+        "devEnv-lint": "next lint",
+        "dev": "npm run publication-build -- --watch",
+        "publication-build": "tsup src/index.ts --format cjs,esm --dts",
+        "publish-package": "npm run publication-build && npx beachball check && npx beachball change && npx beachball bump && npx beachball publish"
     },
     "dependencies": {
         "next": "14.2.3",
@@ -19,7 +19,7 @@
         "tsup": "^8.0.2",
         "react": "^18",
         "react-dom": "^18",
-        "@changesets/cli": "^2.27.1",
+        "beachball": "2.43.1",
         "@types/node": "^20",
         "@types/react": "^18",
         "@types/react-dom": "^18",
@@ -29,6 +29,10 @@
     },
     "publishConfig": {
         "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DamianChybowski95Plus/instant-endpoint"
     },
     "packageManager": "npm@10.2.0",
     "main": "./dist/index.js",

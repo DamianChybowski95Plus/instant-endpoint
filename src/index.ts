@@ -112,7 +112,7 @@ declare namespace Objects {
             ? Partial<Record<keyof Pick<TypeParams.SupportedEndpointArguments, "searchParams">, Object.SupportedOptionsSchema>>
             : never;
     /**
-     *
+     * Get schema objects from object
      */
     type GetSchemas<T extends Objects.SchemasObjects> = { [K in keyof T]: Object.GetSchemas<T[K]> };
     /**
