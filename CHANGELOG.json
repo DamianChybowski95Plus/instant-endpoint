@@ -1,0 +1,20 @@
+{
+  "name": "instant-endpoint",
+  "entries": [
+    {
+      "date": "Sat, 04 May 2024 14:26:49 GMT",
+      "version": "0.1.16",
+      "tag": "instant-endpoint_v0.1.16",
+      "comments": {
+        "patch": [
+          {
+            "author": "141671141+damianchybowski95@users.noreply.github.com",
+            "package": "instant-endpoint",
+            "commit": "0e2121e30352777323b7dc8934dd5526d885f4a3",
+            "comment": "Testing dev enviroment"
+          }
+        ]
+      }
+    }
+  ]
+}

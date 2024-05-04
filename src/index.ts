@@ -10,6 +10,9 @@ declare namespace TypeParams {
      * Type guards for header options.
      */
     type SupportedHeaderOptions = {
+        /**
+         * Type of content allowed to be sent
+         */
         "Content-Type"?: "application/json";
         Accept?: "application/json";
     };
@@ -103,14 +106,14 @@ declare namespace Objects {
               | Record<keyof Pick<TypeParams.SupportedEndpointArguments, "headers">, Object.SupportedHeaderOptions>
           >
         : TEdgeType extends keyof Pick<TypeParams.EndpointTypes, "POST">
-          ? Partial<
-                Record<keyof Pick<TypeParams.SupportedEndpointArguments, "searchParams">, Object.SupportedOptionsSchema> &
-                    Record<keyof Pick<TypeParams.SupportedEndpointArguments, "headers">, Object.SupportedHeaderOptions> &
-                    Record<keyof Pick<TypeParams.SupportedEndpointArguments, "body">, Object.SupportedOptionsSchema>
-            >
-          : TEdgeType extends keyof Pick<TypeParams.EndpointTypes, "GETREDIRECT">
-            ? Partial<Record<keyof Pick<TypeParams.SupportedEndpointArguments, "searchParams">, Object.SupportedOptionsSchema>>
-            : never;
+        ? Partial<
+              Record<keyof Pick<TypeParams.SupportedEndpointArguments, "searchParams">, Object.SupportedOptionsSchema> &
+                  Record<keyof Pick<TypeParams.SupportedEndpointArguments, "headers">, Object.SupportedHeaderOptions> &
+                  Record<keyof Pick<TypeParams.SupportedEndpointArguments, "body">, Object.SupportedOptionsSchema>
+          >
+        : TEdgeType extends keyof Pick<TypeParams.EndpointTypes, "GETREDIRECT">
+        ? Partial<Record<keyof Pick<TypeParams.SupportedEndpointArguments, "searchParams">, Object.SupportedOptionsSchema>>
+        : never;
     /**
      * Get schema objects from object
      */
@@ -146,7 +149,7 @@ declare namespace Function {
      */
     type CallingFunctionForGetredirect<
         TRequired extends Objects.OptionsSupportedByEndpointType<any>,
-        TCallback extends (...args: any[]) => any,
+        TCallback extends (...args: any[]) => any
     > = (
         required: Objects.ZodInferSchemaValuesWithOptions<TRequired>,
         routerPushFunction: (url: string) => void
@@ -175,7 +178,7 @@ export function instantEndpoint<
     T_ApiUrl extends Arguments.ApiUrl,
     TEndpointType extends keyof TypeParams.EndpointTypes,
     TRequired extends Objects.OptionsSupportedByEndpointType<TEndpointType>,
-    TCallback extends Function.Callback<TRequired>,
+    TCallback extends Function.Callback<TRequired>
 >(
     apiUrl: T_ApiUrl,
     edgeType: TEndpointType,
@@ -185,7 +188,7 @@ export function instantEndpoint<
     Function.EndpointFunction,
     TEndpointType extends keyof Pick<TypeParams.EndpointTypes, "GETREDIRECT">
         ? Function.CallingFunctionForGetredirect<TRequired, TCallback>
-        : Function.CallingFunction<TRequired, TCallback>,
+        : Function.CallingFunction<TRequired, TCallback>
 ] {
     function safeParseJson(str: any) {
         let parsed: any = null;
