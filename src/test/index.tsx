@@ -6,6 +6,7 @@ const [PANCACES_ROUTE, CALL_PANCACES] = instantEndpoint(
     "GET",
     { headers: { "Content-Type": "application/json", pancaces: z.string() } },
     async (request, { headers }) => {
+        console.log("q");
         return {
             url: request.url,
             pancaces: headers.pancaces,
