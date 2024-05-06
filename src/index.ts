@@ -348,8 +348,6 @@ export function instantEndpoint<
          */
         //@ts-expect-error - // function argument based on generic; don't know how to write it sounldy in an elegant way
         async (requiredToCall, pushRouterFunction) => {
-            "use client";
-
             // Data required for calling endppoint; is required to be in valid format by typescript
             const transactionParams = {
                 ...("body" in requiredToCall && requiredToCall.body ? { body: JSON.stringify(requiredToCall.body) } : null),
