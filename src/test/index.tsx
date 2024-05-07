@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { instantEndpoint } from "..";
 
+// test
 const [PANCACES_ROUTE, CALL_PANCACES] = instantEndpoint(
     "https://localhost:3000/api/test",
     "GET",

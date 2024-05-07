@@ -10,4 +10,4 @@ Sat, 04 May 2024 14:26:49 GMT
 
 ### Patches
 
-- Testing dev enviroment (141671141+damianchybowski95@users.noreply.github.com)
+-   Testing dev enviroment (141671141+damianchybowski95@users.noreply.github.com)
