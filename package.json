@@ -1,14 +1,17 @@
 {
     "name": "instant-endpoint",
-    "version": "0.1.16",
+    "version": "0.2.0",
     "scripts": {
         "devEnv-dev": "next dev",
         "devEnv-build": "next build",
         "devEnv-start": "next start",
         "devEnv-lint": "next lint",
+        "playwright": "npx playwright test",
+        "playwright-ui": "npx playwright test --ui",
+        "playwright-codegen": "npx playwright codegen https://localhost:3000",
         "dev": "npm run publication-build -- --watch",
         "publication-build": "tsup src/index.ts --format cjs,esm --dts",
-        "publish-package": "npm run publication-build && npx beachball change && npx beachball bump && npx beachball publish"
+        "publish-package": "npm run publication-build && npm publish"
     },
     "dependencies": {
         "next": "14.2.3",
@@ -16,15 +19,15 @@
         "zod": "^3.23.5"
     },
     "devDependencies": {
-        "tsup": "^8.0.2",
-        "react": "^18",
-        "react-dom": "^18",
-        "beachball": "2.43.1",
+        "@playwright/test": "^1.44.0",
         "@types/node": "^20",
         "@types/react": "^18",
         "@types/react-dom": "^18",
         "eslint": "^8",
         "eslint-config-next": "14.2.3",
+        "react": "^18",
+        "react-dom": "^18",
+        "tsup": "^8.0.2",
         "typescript": "^5"
     },
     "publishConfig": {

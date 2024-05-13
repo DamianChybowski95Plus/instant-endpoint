@@ -1,5 +1,11 @@
+import { test, expect } from "@playwright/test";
+
 import { z } from "zod";
-import { instantEndpoint } from "..";
+import { instantEndpoint } from "../../../../dist";
+
+test("init", async ({ page }) => {
+    expect(1).toBe(1);
+});
 
 // test
 const [PANCACES_ROUTE, CALL_PANCACES] = instantEndpoint(
