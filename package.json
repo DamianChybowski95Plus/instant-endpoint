@@ -1,6 +1,6 @@
 {
     "name": "instant-endpoint",
-    "version": "0.2.0",
+    "version": "0.2.2",
     "scripts": {
         "devEnv-dev": "next dev",
         "devEnv-build": "next build",

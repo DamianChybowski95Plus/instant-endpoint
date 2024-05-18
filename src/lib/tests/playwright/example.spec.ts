@@ -1,7 +1,7 @@
+import { instantEndpoint } from "@/index";
 import { test, expect } from "@playwright/test";
 
 import { z } from "zod";
-import { instantEndpoint } from "../../../../dist";
 
 test("init", async ({ page }) => {
     expect(1).toBe(1);
