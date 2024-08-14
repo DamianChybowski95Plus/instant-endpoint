@@ -37,5 +37,5 @@ Call endpoint in the client using returned call function
     }
 
 ```
-Donations link, for everyone that would like to support me : [https://dashboard.stripe.com/payment-links/plink_1PnecNIFjQBUgcVqrJFBCvSK](https://donate.stripe.com/eVag2tcb17o04483cc)
+Donations link, for everyone that would like to support me : 
 Subscription link, for those who would like to sign for recurent donation: 
